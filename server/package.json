@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Item call server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngshumanPathak/Dandelions-Of-Mind.git"
+  },
+  "author": "Angshuman Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngshumanPathak/Dandelions-Of-Mind/issues"
+  },
+  "homepage": "https://github.com/AngshumanPathak/Dandelions-Of-Mind#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
