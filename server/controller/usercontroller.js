@@ -26,3 +26,22 @@ export const userSignup = async(request,response) => {
 
     }
 }
+
+export const userLogin = async(request,response) => {
+    try{
+          const email = request.body.email;
+          const password = request.body.password;
+
+          let user = await User.findOne({email: email, password: password});
+
+          if (user) {
+            return response.status(200).json({data: user , message: "Successfully logged in"});
+          } else {
+            return response.status(401).json({message: "Invalid credentials"});
+          }
+          }
+    
+    catch (error){
+        response.status(500).json({message: error.message});
+    }
+}

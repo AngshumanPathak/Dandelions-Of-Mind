@@ -1,9 +1,9 @@
 
-import {Dialog} from "@mui/material";
+import {Dialog, Typography} from "@mui/material";
 
 import { useState, useContext } from "react";
 
-import { authenticateSignup } from "../../service/api";
+import { authenticateSignup, authenticateLogin } from "../../service/api";
 import { DataContext } from "../../Context/DataProvider";
 //design
 import './LoginSignUp.css'
@@ -29,6 +29,13 @@ const signupInitialValues = {
     password: ''
 }
 
+const loginInitialvalues = {
+    email: '',
+    password: ''
+}
+
+
+  
 
 
 const LoginDialog = ({open, setOpen}) => {
@@ -36,14 +43,19 @@ const LoginDialog = ({open, setOpen}) => {
     const [account,toggleAccount] = useState(accountInitialValues.login);
     const [signup, setSignup] = useState(signupInitialValues);
     const {setAccount} = useContext(DataContext);
+    const [login, setLogin] = useState(loginInitialvalues);
+    const [error, setError] = useState(false);
     const handleClose = () => {
-        toggleAccount(accountInitialValues.login);
         setOpen(false);
+        toggleAccount(accountInitialValues.login);
+        
+        
     }
     
 
     const toggleSignup = () => {
         toggleAccount(accountInitialValues.signup);
+        
     }
 
     const onInputChange = (e) =>{
@@ -60,6 +72,22 @@ const LoginDialog = ({open, setOpen}) => {
          setAccount(signup.username);
       }
 
+    const onValueChange = (e) =>{
+        setLogin({...login,[e.target.name]:e.target.value});
+    }
+    
+    const loginUser = async() =>{
+        let response = await authenticateLogin(login);
+        console.log(response);
+        if(response.status === 200) {
+            handleClose();
+            setAccount(response.data.data.username);
+        }
+        else{
+           setError(true);
+        }
+        
+    }
 
      return (
          <Dialog open = {open} onClose={handleClose}>
@@ -78,11 +106,14 @@ const LoginDialog = ({open, setOpen}) => {
                 
                 <div className = 'input' >
                     <img src={email_icon} alt="" />
-                    <input type="email" placeholder='Enter your Email'  name='email' onChange={(e) => onInputChange(e)}/>
+                    <input type="email" placeholder='Enter your Email'  name='email' onChange={(e) => {onInputChange(e); onValueChange(e)}}/>
+                    
                 </div>
                 <div className = 'input' >
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder ="Enter password"  name='password' onChange={(e) => onInputChange(e)}/>
+                    <input type="password" placeholder ="Enter password"  name='password' onChange={(e) => {onInputChange(e); onValueChange(e)}}/>
+
+                    
                 </div>
                 {account.view === 'Login'?<div className="forgot-password">Forgot Password?<span href=""><a>Click Here</a></span><br/>
                 <span>New Here <a onClick={() => toggleSignup()}>Sign Up</a></span></div> : <div></div> }
@@ -98,7 +129,7 @@ const LoginDialog = ({open, setOpen}) => {
 
     {account.view === "Login" && (
         <div className="login">
-            <button className="submit" >Login</button>
+            <button className="submit" onClick={() => loginUser()}>Login</button>
         </div>
     )}
 </div>

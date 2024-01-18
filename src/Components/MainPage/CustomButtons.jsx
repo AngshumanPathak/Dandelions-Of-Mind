@@ -37,20 +37,20 @@ const CustomButtons = () => {
 
    const [open,setOpen] = useState(false);
 
-   const {account} = useContext(DataContext);
+   const {account, setAccount} = useContext(DataContext);
    const openDialog = () =>{
        setOpen(true);
    }
 
   return (
-    <> <Wrapper >
+    <> <Wrapper style={{ display: 'flex', alignItems: 'center' }}>
           {
-            account? <Profile account = {account}/> : <LoginButton variant="container" onClick={()=> openDialog()}>Login</LoginButton>
+            account? <Profile account = {account} setAccount = {setAccount}/> : <LoginButton variant="container" onClick={()=> openDialog()}>Login</LoginButton>
           }
           
           <Container>
-              <ShoppingCartIcon style={{marginTop: 25, color: 'grey'}}/>
-              <Typography style ={{marginTop: 25,color: 'grey'}}>Cart</Typography>
+              <ShoppingCartIcon style={{marginTop: 5, color: 'grey'}}/>
+              <Typography style ={{marginTop: 5,color: 'grey'}}>Cart</Typography>
 
           </Container>
           <LoginDialog open={open} setOpen={setOpen}/>
