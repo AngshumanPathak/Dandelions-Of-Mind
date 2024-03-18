@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Box, styled, colors } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import Search from './search'
 import CustomButtons from './CustomButtons'
-
+import { Link } from 'react-router-dom'
 
 const StyledMainPage = styled(AppBar)`
 background: #fa9d88;
@@ -25,10 +25,12 @@ const MainPage = () => {
     
         <StyledMainPage>
           <Toolbar style ={{minHeight: 55}} >
+            <Link to = '/' style ={{textDecoration: 'none'}}>
             <Box>
               <MainLogo>Dandelions Of Mind</MainLogo>
               
             </Box>
+            </Link>
             
             <Search/>
             <CustomButtonsWrapper>

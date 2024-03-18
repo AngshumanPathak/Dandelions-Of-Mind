@@ -25,6 +25,7 @@ export const authenticateLogin = async(data) => {
     catch (error){
         
         console.log('Error while calling login API', error);
+        return error.response;
         
 
     }

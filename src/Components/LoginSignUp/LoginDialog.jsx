@@ -10,6 +10,7 @@ import './LoginSignUp.css'
 import password_icon from '../assets/password.png';
 import user_icon from '../assets/person.png';
 import email_icon from '../assets/email.png';
+import styled from "@emotion/styled";
 
 
 const accountInitialValues = {
@@ -34,6 +35,15 @@ const loginInitialvalues = {
     password: ''
 }
 
+const Error = styled(Typography)`
+font-size: 14px;
+text-align: center;
+line-height: 0;
+font-weight: 600;
+margin-top: 10px;
+
+`
+
 
   
 
@@ -48,6 +58,7 @@ const LoginDialog = ({open, setOpen}) => {
     const handleClose = () => {
         setOpen(false);
         toggleAccount(accountInitialValues.login);
+        setError(false);
         
         
     }
@@ -108,13 +119,16 @@ const LoginDialog = ({open, setOpen}) => {
                     <img src={email_icon} alt="" />
                     <input type="email" placeholder='Enter your Email'  name='email' onChange={(e) => {onInputChange(e); onValueChange(e)}}/>
                     
+                    
                 </div>
                 <div className = 'input' >
                     <img src={password_icon} alt="" />
                     <input type="password" placeholder ="Enter password"  name='password' onChange={(e) => {onInputChange(e); onValueChange(e)}}/>
 
-                    
+                      
                 </div>
+                {error && <Error>Please Enter Valid Credentials</Error>}
+                
                 {account.view === 'Login'?<div className="forgot-password">Forgot Password?<span href=""><a>Click Here</a></span><br/>
                 <span>New Here <a onClick={() => toggleSignup()}>Sign Up</a></span></div> : <div></div> }
                 
