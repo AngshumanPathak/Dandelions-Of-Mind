@@ -126,3 +126,80 @@ export const products = [
         tagline: 'Grab Now!' 
     }
 ];
+
+
+export const namestands = [
+    { 
+        id: 'product8',
+        url: 'https://i.postimg.cc/3wpZWv0n/Whats-App-Image-2024-03-18-at-23-03-15-4e310b51-1.jpg', 
+        detailUrl: 'https://i.postimg.cc/QCYw8Tv0/Whats-App-Image-2024-03-18-at-23-03-15-4e310b51.jpg',
+        title: {
+            shortTitle: 'Large Name Stand',
+            longTitle: 'Large Name Stand with Black and White Pigment each letter size (4cm x 5cm)'
+        }, 
+        price: {
+            mrp: 500,
+            cost: 300,
+            discount: '40%'
+        },
+        quantity: 1,
+        description: 'Customizable Name Stands with customizable designs with wooden stands. Gift your loved ones with one of a kind name stands to decorate their work space.',
+        discount: 'Low', 
+        tagline: 'At Discounted Price' 
+    },
+    { 
+        id: 'product9',
+        url: 'https://i.postimg.cc/jdmNNjb9/Whats-App-Image-2024-03-15-at-16-27-34-19710965.jpg', 
+        detailUrl: 'https://i.postimg.cc/pXy30sn7/Whats-App-Image-2024-03-15-at-16-27-34-19710965.jpg',
+        title: {
+            shortTitle: 'Small Name Stand',
+            longTitle: 'Small Name Stand with Pink Pigment each letter size (2cm x 2cm)'
+        },
+        price: {
+            mrp: 180,
+            cost: 150,
+            discount: '16%'
+        },
+        quantity: 1,
+        description: 'Customizable Name Stands with customizable designs with wooden stands. Gift your loved ones with one of a kind name stands to decorate their work space.',
+        discount: 'From 99+5% Off', 
+        tagline: 'Best Sellers' 
+    },
+    { 
+        id: 'product10',
+        url: 'https://i.postimg.cc/G2xJxnQD/saveinsta-cam.jpg', 
+        detailUrl: 'https://i.postimg.cc/tRBLtK7W/saveinsta-cam.jpg', 
+        title: {
+            shortTitle: 'Small Name Stand',
+            longTitle: 'Small Name Stand with Blue Pigment each letter size (2cm x 2cm)'
+        }, 
+        price: {
+            mrp: 180,
+            cost: 150,
+            discount: '16%'
+        },
+        quantity: 1,
+        description: 'Customizable Name Stands with customizable designs with wooden stands. Gift your loved ones with one of a kind name stands to decorate their work space.',
+        discount: 'Upto 70% Off', 
+        tagline: 'Best Sellers' 
+    },
+    { 
+        id: 'product11',
+        url: 'https://i.postimg.cc/SxHryrRn/Snapinsta-app-431506123-954416542786857-455150233145630854-n-1080.jpg', 
+        detailUrl: 'https://i.postimg.cc/15T2bDGz/Snapinsta-app-431506123-954416542786857-455150233145630854-n-1080.jpg',
+        title: {
+            shortTitle: 'Small Name Stand',
+            longTitle: 'Small Name Stand with Transparent Pigment each letter size (2cm x 2cm)',
+        }, 
+        price: {
+            mrp: 180,
+            cost: 150,
+            discount: '16%'
+        },
+        quantity: 1,
+        description: 'Customizable Name Stands with customizable designs with wooden stands. Gift your loved ones with one of a kind name stands to decorate their work space.',
+        discount: 'high', 
+        tagline: 'Best Sellers' 
+    }
+    
+];

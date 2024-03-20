@@ -1,5 +1,5 @@
 
-import Product from "../model/product-schema.js";
+import {Product, Namestand} from "../model/product-schema.js";
 
 
 export const getProducts = async(request,response) => {
@@ -13,6 +13,25 @@ export const getProducts = async(request,response) => {
        
     }
     
+}
+
+
+export const getNameStands = async(request,response) => {
+
+  try{
+      const namestands = await Namestand.find({});
+
+
+      response.status(200).json(namestands);
+  }
+  
+  catch(error){
+
+    response.status(500).json({message: error.message});
+
+
+  }
+  
 }
 
 

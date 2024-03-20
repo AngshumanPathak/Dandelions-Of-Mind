@@ -3,12 +3,13 @@ import React from 'react'
 import {useEffect} from 'react'
 
 
-import { getProducts } from '../../../redux/actions/productActions'
+import { getProducts, getNameStands } from '../../../redux/actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from './Banner'
 import Slide from './Slides'
 import {Box,styled} from '@mui/material';
+import Slide2 from './Slides2'
 
 const Component = styled(Box)`
    padding: 10px 10px;
@@ -23,14 +24,16 @@ const Home = () => {
 
 
   const {products} =useSelector((state) => state.getProducts);
+  const {nameStands} =useSelector((state) => state.getNameStands);  
 
-  console.log (products);
+  
   
   const dispatch = useDispatch();
 
 
   useEffect (() => {
-    dispatch(getProducts())
+    dispatch(getProducts());
+    dispatch(getNameStands());
   }, [dispatch])
   
   return (  
@@ -39,6 +42,7 @@ const Home = () => {
           
             <Banner/>
             <Slide products = {products}/>
+            <Slide2 namestands = {nameStands}/>
           
           
           </Component>
