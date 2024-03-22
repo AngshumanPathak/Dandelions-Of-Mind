@@ -4,11 +4,13 @@
 
 
 
+
+
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Box, Typography, Button,Divider, styled } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Namestand } from "../../../../server/model/product-schema";
 
 
 const Component = styled(Box)`
@@ -68,13 +70,13 @@ const responsive = {
     }
 }
 
-const Slide2 = ({namestands}) => {
+const Slide3 = ({others}) => {
 
     return (
 
     <Component>
       <Deal>
-         <DealText>Name Stands</DealText>
+         <DealText>Others</DealText>
          <ViewAllButton variant = "contained">
            View All
          </ViewAllButton>
@@ -93,11 +95,11 @@ const Slide2 = ({namestands}) => {
         responsive={responsive}
         >
             {
-                namestands.map(namestand =>(
-                  <Link to = {`namestand/${namestand.id}`} style = {{textDecoration: "none"}}>
+                others.map(other =>(
+                  <Link to = {`other/${other.id}`} style = {{textDecoration: "none"}}>
                     <Box textAlign= "center" style ={{padding: "25px 15px"}}>
-                         <Image src= {namestand.url} alt = "product"/>
-                         <Text>{namestand.title.shortTitle}</Text>
+                         <Image src= {other.url} alt = "product"/>
+                         <Text>{other.title.shortTitle}</Text>
                          
                     </Box>
                   </Link>
@@ -116,4 +118,4 @@ const Slide2 = ({namestands}) => {
 
 }
 
-export default Slide2;
+export default Slide3;

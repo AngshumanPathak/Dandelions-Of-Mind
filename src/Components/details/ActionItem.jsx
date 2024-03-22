@@ -26,7 +26,7 @@ const StyledButton = styled(Button)`
    background-color : #C04000;
 `
 
-const ActionItem = ({product}) => {
+const ActionItem = ({product, namestand, other}) => {
    return (
        <LeftContainer>
            <Box styled={{ padding : "15px 20px", border: "1px solid #f0f0f0"}}>
@@ -36,9 +36,32 @@ const ActionItem = ({product}) => {
            <StyledButton variant="contained"><AddShoppingCartIcon />Add to Cart</StyledButton>
            <StyledButton variant="contained"><ShoppingBagIcon />Buy Now</StyledButton>
 
-       </LeftContainer>
-   )
-}
+
+
+           {namestand && (
+                <LeftContainer>
+                    <Box styled={{ padding: "15px 20px", border: "1px solid #f0f0f0" }}>
+                        <Image src={namestand.detailUrl} />
+                    </Box>
+
+                    <StyledButton variant="contained"><AddShoppingCartIcon />Add to Cart</StyledButton>
+                    <StyledButton variant="contained"><ShoppingBagIcon />Buy Now</StyledButton>
+                </LeftContainer>
+            )}
+
+            {other && (
+                <LeftContainer>
+                    <Box styled={{ padding: "15px 20px", border: "1px solid #f0f0f0" }}>
+                        <Image src={other.detailUrl} />
+                    </Box>
+
+                    <StyledButton variant="contained"><AddShoppingCartIcon />Add to Cart</StyledButton>
+                    <StyledButton variant="contained"><ShoppingBagIcon />Buy Now</StyledButton>
+                </LeftContainer>
+            )}
+        </LeftContainer>
+    );
+};
 
 
 export default ActionItem;

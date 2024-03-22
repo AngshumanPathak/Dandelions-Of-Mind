@@ -1,5 +1,5 @@
-import { products, namestands } from "./constants/data.js";
-import {Product, Namestand} from "./model/product-schema.js";
+import { products, namestands, other } from "./constants/data.js";
+import {Product, Namestand, Other} from "./model/product-schema.js";
 
 
 
@@ -12,6 +12,10 @@ const DefaultData = async()=>{
         await Namestand.insertMany(namestands);
         console.log("Namestand imported successfully");
         
+
+        await Other.insertMany(other);
+        console.log("Other imported successfully");
+
 
         
 

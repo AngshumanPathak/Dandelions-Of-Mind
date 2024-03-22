@@ -4,6 +4,8 @@
 import MainPage from './Components/MainPage/MainPage';
 import Home from './Components/MainPage/Home/Home';
 import DetailView from './Components/details/DetailView';
+import DetailViewNamestand from './Components/details/DetailViewNamestand';
+import DetailViewOther from './Components/details/DetailViewOther';
 import {Box} from '@mui/material';
 import DataProvider from './Context/DataProvider';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -17,6 +19,9 @@ function App(){
             <Routes>
                <Route path = '/' element = {<Home/>}/>
                <Route path ='/product/:id' element = {<DetailView/>}/>
+               <Route path='/namestand/:id' element = {<DetailViewNamestand/>}/>
+               <Route path = '/other/:id' element = {<DetailViewOther/>}/>
+               
             </Routes>   
         </Box>
     </BrowserRouter>

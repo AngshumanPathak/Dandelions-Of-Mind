@@ -49,20 +49,10 @@ export const getProductDetailsReducer = (state = {product: {} }, action) => {
 }
 
 
-export const getNameStandsReducer = (state = {nameStands: [] }, action) => {
 
-    switch (action.type) {
-        case actionTypes.GET_NAMESTANDS_SUCCESS:
-            return {
-                nameStands: action.payload
-            };
-    
-        case  actionTypes.GET_NAMESTANDS_FAIL:
-                return{
-                    error: action.payload
-                };
-        
-        default: 
-            return state;    
-            }
-    }
+
+
+
+
+
+   

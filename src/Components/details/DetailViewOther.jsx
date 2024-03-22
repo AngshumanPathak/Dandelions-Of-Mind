@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getProductDetails } from "../../redux/actions/productActions";
+import { getOtherDetails } from "../../redux/actions/otherActions";
 
 import { Box,  Typography, Grid, styled } from "@mui/material";
-import ActionItem from "./ActionItem";
+import ActionItemOther from "./ActionItemOther";
 import LabelIcon from '@mui/icons-material/Label';
 
 
@@ -43,41 +43,40 @@ const Badge = styled(LabelIcon)`
  font-size: 15px;
 `
 
-const DetailView = () => {
+const DetailViewOther = () => {
     
     const dispatch = useDispatch();
     const {id} = useParams();
     
-    const {loading,product} = useSelector(state => state.getProductDetails);
-    console.log('getNamestandDetails slice:', { loading, product });
+    const {loading,other} = useSelector(state => state.getOtherDetails);
 
     
     
-    console.log (product);
+    console.log (other);
     
   
     useEffect (() => {
-        if(product && id !== product.id)
-        dispatch(getProductDetails(id));
+        if(other && id !== other.id)
+        dispatch(getOtherDetails(id));
         
         
-    }, [dispatch, id, product,loading])
+    }, [dispatch, id, other,loading])
     
     return (
         <Component>
            {
-                product &&Object.keys(product).length &&
+                other &&Object.keys(other).length &&
                 <Container container>
-                    <Grid item lg={4} md={4} sm={8} xs={12}><ActionItem product={product}/></Grid>
-                    <RightContainer item lg={8} md={8} sm={8} xs={12}><Typography variant="h5">{product.title.longTitle}</Typography>
+                    <Grid item lg={4} md={4} sm={8} xs={12}><ActionItemOther other={other}/></Grid>
+                    <RightContainer item lg={8} md={8} sm={8} xs={12}><Typography variant="h5">{other.title.longTitle}</Typography>
                     <Typography>
-                        <Box component ="span" style={{fontSize: 30, fontWeight: 500}}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
-                        <Box component ="span" style ={{color: 'red'}}><strike> ₹{product.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
-                        <Box component ="span" style={{color: 'green'}}>{product.price.discount}</Box>
+                        <Box component ="span" style={{fontSize: 30, fontWeight: 500}}>₹{other.price.cost}</Box>&nbsp;&nbsp;&nbsp;
+                        <Box component ="span" style ={{color: 'red'}}><strike> ₹{other.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
+                        <Box component ="span" style={{color: 'green'}}>{other.price.discount}</Box>
 
                     </Typography>
                     <SmallText>
-                    <Typography>{product.description}</Typography>
+                    <Typography>{other.description}</Typography>
                     <Typography><Badge/>Best priced</Typography>
                     <Typography><Badge/>No returns</Typography>
                     <Typography><Badge/>Shipping charges extra for out of station deliveries</Typography>
@@ -93,4 +92,4 @@ const DetailView = () => {
     )
 }
 
-export default DetailView;
+export default DetailViewOther;

@@ -10,5 +10,7 @@ export const GET_PRODUCT_DETAILS_FAIL = 'getProductDetailsFail';
 export const GET_PRODUCT_DETAILS_RESET = 'getProductDetailsReset';
 
 
-export const GET_NAMESTANDS_SUCCESS = 'getNameStandsSuccess';
-export const GET_NAMESTANDS_FAIL = 'getNameStandsFail';
+
+
+
+

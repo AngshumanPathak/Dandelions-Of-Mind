@@ -35,16 +35,8 @@ export const getProductDetails = (id) => async(dispatch) => {
 
 }
 
-export const getNameStands = () => async(dispatch) =>{
-    try{
 
-        let {data} = await axios.get(`${URL}/test/namestands`);
-        dispatch ({type: actiontypes.GET_NAMESTANDS_SUCCESS, payload: data});
-        
 
-    }
-    catch(error){
-        console.log('Error while calling getNameStands API', error.message);
-        dispatch ({type: actiontypes.GET_NAMESTANDS_FAIL, payload: error.message});
-    }
-}
+
+
+

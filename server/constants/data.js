@@ -203,3 +203,122 @@ export const namestands = [
     }
     
 ];
+
+
+export const other = [
+    { 
+        id: 'product12',
+        url: 'https://i.postimg.cc/sDLrbTcH/Snapinsta-app-357653134-172658572463726-8849376018458962464-n-1080-1.jpg', 
+        detailUrl: 'https://i.postimg.cc/2SYqL8pf/Snapinsta-app-357653134-172658572463726-8849376018458962464-n-1080.jpg',
+        title: {
+            shortTitle: 'Resin Coaster',
+            longTitle: 'Customizable Resin Coaster (4 inch Radius)'
+        }, 
+        price: {
+            mrp: 500,
+            cost: 300,
+            discount: '40%'
+        },
+        quantity: 1,
+        description: 'Customizable Resin Coaster with customizable choice of pigments and design. Gift your loved ones with one of a kind coaster which will stand out in your crockery.',
+        discount: 'Yea', 
+        tagline: 'At Discounted Price' 
+    },
+    { 
+        id: 'product13',
+        url: 'https://i.postimg.cc/DwbTh1pv/Snapinsta-app-361144633-144409005343201-325712223822685487-n-1080.jpg', 
+        detailUrl: 'https://i.postimg.cc/rpFKgnFn/Snapinsta-app-361144633-144409005343201-325712223822685487-n-1080.jpg',
+        title: {
+            shortTitle: 'Leaf shaped Resin bookmark',
+            longTitle: 'Customizable Leaf shaped resin bookmark (10 cms in length)'
+        },
+        price: {
+            mrp: 180,
+            cost: 150,
+            discount: '16%'
+        },
+        quantity: 1,
+        description: 'Customizable leaf shaped transparent Resin bookmark with customizable pigments. Gift your loved ones with one of a kind bookmark to keep as a stand out piece with their favourite books.',
+        discount: 'From 99+5% Off', 
+        tagline: 'Best Sellers' 
+    },
+    { 
+        id: 'product14',
+        url: 'https://i.postimg.cc/76q8SdHh/Whats-App-Image-2024-03-15-at-16-19-11-bc445d1c.jpg', 
+        detailUrl: 'https://i.postimg.cc/NMKLvKXR/Whats-App-Image-2024-03-15-at-16-19-11-bc445d1c.jpg', 
+        title: {
+            shortTitle: 'Small Resin Photoframe',
+            longTitle: 'Small Photoframe with stand (Radius 4 inch) '
+        }, 
+        price: {
+            mrp: 500,
+            cost: 300,
+            discount: '40%'
+        },
+        quantity: 1,
+        description: 'Customizable Resin photoframe with designs and pigments of your choice. Save your memories in these customizable photo frames with design of your choice. (Comes with a wodden stand)',
+        discount: 'Upto 70% Off', 
+        tagline: 'Best Sellers' 
+    },
+    { 
+        id: 'product15',
+        url: 'https://i.postimg.cc/R05zZq2c/Whats-App-Image-2024-03-15-at-16-42-09-31ff5af9.jpg', 
+        detailUrl: 'https://i.postimg.cc/J4ZDhH2q/Whats-App-Image-2024-03-15-at-16-42-09-31ff5af9.jpg',
+        title: {
+            shortTitle: 'Small Resin Photoframe',
+            longTitle: 'Small Photoframe with stand (Radius 4 inch)',
+        }, 
+        price: {
+            mrp: 500,
+            cost: 300,
+            discount: '40%'
+        },
+        quantity: 1,
+        description: 'Customizable Resin photoframe with designs and pigments of your choice. Save your memories in these customizable photo frames with design of your choice. (Comes with a wodden stand)',
+        discount: 'yea boi', 
+        tagline: 'Best Sellers' 
+    },
+
+    { 
+        id: 'product16',
+        url: 'https://i.postimg.cc/k5QP6qdL/Whats-App-Image-2024-03-15-at-16-21-22-c357590d.jpg', 
+        detailUrl: 'https://i.postimg.cc/8PRcGQ7X/Whats-App-Image-2024-03-15-at-16-21-22-c357590d.jpg',
+        title: {
+            shortTitle: 'Large Resin Photoframe',
+            longTitle: 'Large Photoframe with stand (Radius 8 inch)',
+        }, 
+        price: {
+            mrp: 1000,
+            cost: 850,
+            discount: '15%'
+        },
+        quantity: 1,
+        description: 'Customizable Resin photoframe with designs and pigments of your choice. Save your memories in these customizable photo frames with design of your choice. (Comes with a wodden stand)',
+        discount: 'yea boi', 
+        tagline: 'Best Sellers' 
+    },
+
+    { 
+        id: 'product17',
+        url: 'https://i.postimg.cc/yxJVCLYJ/Whats-App-Image-2024-03-15-at-16-19-12-5405792b.jpg', 
+        detailUrl: 'https://i.postimg.cc/MpYn72xf/Whats-App-Image-2024-03-15-at-16-19-12-5405792b.jpg',
+        title: {
+            shortTitle: 'Resin Hair Clip',
+            longTitle: 'Customizable Resin Hair Clip (5 cms in length)',
+        }, 
+        price: {
+            mrp: 100,
+            cost: 60,
+            discount: '40%'
+        },
+        quantity: 1,
+        description: 'Customizable Hair Clips with pigments and designs of your choice. Gift your loved ones with these one a kind hair clips that will always standout from the rest',
+        discount: 'yea boi', 
+        tagline: 'Best Sellers' 
+    }
+    
+];
+
+
+
+
