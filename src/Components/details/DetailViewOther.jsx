@@ -11,21 +11,31 @@ import LabelIcon from '@mui/icons-material/Label';
 const Component = styled(Box)`
 background : antiquewhite;
 margin-top : 55px;
+height: 100vh;
 
 `
 
-const Container = styled(Grid)`
- background : antiquewhite;
- display: flex;
- height: 100vh;
+const Container = styled(Grid)(({ theme }) => ({
 
-
-`
-
-const RightContainer = styled(Grid)`
- margin-top : 50px;
+    background : 'antiquewhite',
+    display: 'flex',
+    
+    [theme.breakpoints.down('md')]: {
+        margin: 0
+    }
+}))
  
-`
+
+
+
+const RightContainer = styled(Grid)(({ theme }) => ({
+    margintop : '50px',
+   
+   
+   [theme.breakpoints.down('md')]: {
+       margin: '25px'
+   }
+   }))
 
 const SmallText = styled(Box)`
 font-size : 14px;

@@ -12,26 +12,52 @@ import Profile from './Profile';
 import LoginDialog from '../LoginSignUp/LoginDialog';
 
 
-const Wrapper = styled(Box)`
-display: flex;
-margin: 0 3% 0 auto;
+const Wrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+margin: '0 3% 0 auto',
+alignItems: 'center',
+   [theme.breakpoints.down('md')]: {
+     display: 'block'
+   }
+}))
 
 
-`;
-
-const LoginButton = styled(Button)`
-color: antiquewhite;
-background: grey;
-margin: 20px ;
-text-transform: none;
-padding: 5px 20px;
 
 
-`;
 
-const Container = styled(Box)`
-display: flex;
-`
+const LoginButton = styled(Button)(({ theme }) => ({
+  
+  color: 'antiquewhite',
+  background: 'grey',
+  margin: '20px',
+  textTransform: 'none',
+  padding: '5px 20px',
+
+  [theme.breakpoints.down('md')]: {
+    color: 'grey',
+    background: 'none',
+    margin: 0,
+    fontFamily: "Arial",
+    fontWeight: 400,
+    fontSize: '1rem',
+    lineHeight: '1.5',
+    letterSpacing: '0.00938em'
+  }
+
+}))
+
+
+
+
+
+const Container = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  [theme.breakpoints.down('md')]: {
+    display: 'block',
+    margin: '30px'
+  }
+}))
+
 
 const CustomButtons = () => {
 
@@ -41,9 +67,11 @@ const CustomButtons = () => {
    const openDialog = () =>{
        setOpen(true);
    }
+   
+  
 
   return (
-    <> <Wrapper style={{ display: 'flex', alignItems: 'center' }}>
+    <> <Wrapper>
           {
             account? <Profile account = {account} setAccount = {setAccount}/> : <LoginButton variant="container" onClick={()=> openDialog()}>Login</LoginButton>
           }

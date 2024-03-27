@@ -5,11 +5,17 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-const LeftContainer = styled(Box)`
-    min-width: 40%;
-    padding: 40px 0 0 80px;
-`;
+const LeftContainer = styled(Box)(({ theme }) => ({
+    
 
+    minWidth: 40,
+    padding: '40px 0 0 80px',
+
+    [theme.breakpoints.down('md')]: {
+        padding: '20px 0 0 40px'
+    }
+
+}))
 
 const Image = styled('img')`
     margin-bottom : 15px;
@@ -17,14 +23,24 @@ const Image = styled('img')`
     border-radius : 10px;
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)(({ theme }) => ({
 
-   width : 47%;
-   height: 50%;
-   border-radius : 10px;
-   margin-left : 5px;
-   background-color : #C04000;
-`
+   width : '47%',
+   height: '50%',
+   borderRadius : '10',
+   marginLeft : '5px',
+   backgroundColor : '#C04000',
+
+   [theme.breakpoints.down('lg')]: {
+    
+    width: '44%'
+},
+
+[theme.breakpoints.down('md')]: {
+    
+    width: '47%'
+}
+}))
 
 const ActionItem = ({product, namestand, other}) => {
    return (

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getProductDetails } from "../../redux/actions/productActions";
 
 import { Box,  Typography, Grid, styled } from "@mui/material";
+
 import ActionItem from "./ActionItem";
 import LabelIcon from '@mui/icons-material/Label';
 
@@ -11,21 +12,33 @@ import LabelIcon from '@mui/icons-material/Label';
 const Component = styled(Box)`
 background : antiquewhite;
 margin-top : 55px;
+height: 100vh;
 
 `
 
-const Container = styled(Grid)`
- background : antiquewhite;
- display: flex;
- height: 100vh;
+const Container = styled(Grid)(({ theme }) => ({
 
-
-`
-
-const RightContainer = styled(Grid)`
- margin-top : 50px;
+    background : 'antiquewhite',
+    display: 'flex',
+    
+    [theme.breakpoints.down('md')]: {
+        margin: 0
+    }
+}))
  
-`
+
+
+
+
+const RightContainer = styled(Grid)(({ theme }) => ({
+ margintop : '50px',
+
+
+[theme.breakpoints.down('md')]: {
+    margin: '25px'
+}
+}))
+
 
 const SmallText = styled(Box)`
 font-size : 14px;
@@ -69,6 +82,7 @@ const DetailView = () => {
                 product &&Object.keys(product).length &&
                 <Container container>
                     <Grid item lg={4} md={4} sm={8} xs={12}><ActionItem product={product}/></Grid>
+                    
                     <RightContainer item lg={8} md={8} sm={8} xs={12}><Typography variant="h5">{product.title.longTitle}</Typography>
                     <Typography>
                         <Box component ="span" style={{fontSize: 30, fontWeight: 500}}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
