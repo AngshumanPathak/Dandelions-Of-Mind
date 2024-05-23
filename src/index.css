@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgb(100, 98, 98);
-  background-color: #242424;
+ 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,6 +24,7 @@ a {
 }
 a:hover {
   color: #d8b4ba;
+  
 }
 
 body {
@@ -43,17 +44,19 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: none;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: #242424;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 5px;
 }
 button:hover {
-  border-color: #d8b4ba;
-  background-color: red;
+  border-color: transparent;
+  background-color: transparent;
 }
 button:focus,
 button:focus-visible {

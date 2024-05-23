@@ -212,7 +212,7 @@ export const other = [
         detailUrl: 'https://i.postimg.cc/2SYqL8pf/Snapinsta-app-357653134-172658572463726-8849376018458962464-n-1080.jpg',
         title: {
             shortTitle: 'Resin Coaster',
-            longTitle: 'Customizable Resin Coaster (4 inch Radius)'
+            longTitle: 'Customizable Resin Coaster (4 inch Radius) with customizable choice of pigments and design'
         }, 
         price: {
             mrp: 500,
@@ -248,7 +248,7 @@ export const other = [
         detailUrl: 'https://i.postimg.cc/NMKLvKXR/Whats-App-Image-2024-03-15-at-16-19-11-bc445d1c.jpg', 
         title: {
             shortTitle: 'Small Resin Photoframe',
-            longTitle: 'Small Photoframe with stand (Radius 4 inch) '
+            longTitle: 'Small Photoframe with stand (Radius 4 inch) with customizable choice of pigments and design' ,
         }, 
         price: {
             mrp: 500,
@@ -266,7 +266,7 @@ export const other = [
         detailUrl: 'https://i.postimg.cc/J4ZDhH2q/Whats-App-Image-2024-03-15-at-16-42-09-31ff5af9.jpg',
         title: {
             shortTitle: 'Small Resin Photoframe',
-            longTitle: 'Small Photoframe with stand (Radius 4 inch)',
+            longTitle: 'Small Photoframe with stand (Radius 4 inch) with customizable choice of pigments and design' ,
         }, 
         price: {
             mrp: 500,
@@ -285,7 +285,7 @@ export const other = [
         detailUrl: 'https://i.postimg.cc/8PRcGQ7X/Whats-App-Image-2024-03-15-at-16-21-22-c357590d.jpg',
         title: {
             shortTitle: 'Large Resin Photoframe',
-            longTitle: 'Large Photoframe with stand (Radius 8 inch)',
+            longTitle: 'Large Photoframe with stand (Radius 8 inch) with customizable choice of pigments and design' ,
         }, 
         price: {
             mrp: 1000,
@@ -304,7 +304,7 @@ export const other = [
         detailUrl: 'https://i.postimg.cc/MpYn72xf/Whats-App-Image-2024-03-15-at-16-19-12-5405792b.jpg',
         title: {
             shortTitle: 'Resin Hair Clip',
-            longTitle: 'Customizable Resin Hair Clip (5 cms in length)',
+            longTitle: 'Customizable Resin Hair Clip (5 cms in length) with pigments and designs of your choice' ,
         }, 
         price: {
             mrp: 100,

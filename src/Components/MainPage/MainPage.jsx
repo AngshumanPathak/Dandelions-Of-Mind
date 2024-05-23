@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 
 import { AppBar, Toolbar, Box, styled, Drawer, IconButton, List, ListItem } from '@mui/material'
 import { grey } from '@mui/material/colors'
-import Search from './search'
+import Search from './Search'
 import CustomButtons from './CustomButtons'
 import { Link } from 'react-router-dom'
 import {Menu} from '@mui/icons-material';
@@ -38,7 +38,7 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
 
 
 const MainPage = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
 const handleOpen = () => {
   setOpen(true);
