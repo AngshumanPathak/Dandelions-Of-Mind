@@ -52,7 +52,8 @@ const LoginDialog = ({open, setOpen}) => {
 
     const [account,toggleAccount] = useState(accountInitialValues.login);
     const [signup, setSignup] = useState(signupInitialValues);
-    const {setAccount} = useContext(DataContext);
+    const {setAccount,setIsLoggedIn} = useContext(DataContext);
+    
     const [login, setLogin] = useState(loginInitialvalues);
     const [error, setError] = useState(false);
     const handleClose = () => {
@@ -81,6 +82,7 @@ const LoginDialog = ({open, setOpen}) => {
          if(!response) return;
          handleClose();
          setAccount(signup.username);
+         setIsLoggedIn(true);
       }
 
     const onValueChange = (e) =>{
@@ -93,6 +95,7 @@ const LoginDialog = ({open, setOpen}) => {
         if(response.status === 200) {
             handleClose();
             setAccount(response.data.data.username);
+            setIsLoggedIn(true);
         }
         else{
            setError(true);

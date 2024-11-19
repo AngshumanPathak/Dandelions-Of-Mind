@@ -5,7 +5,7 @@ import {getProductReducer, getProductDetailsReducer} from './reducers/productRed
 import {getOthersReducer, getOtherDetailsReducer} from './reducers/otherReducer';
 import {getNameStandsReducer,getNamestandDetailsReducer } from './reducers/namestandReducer';
 import {cartReducer} from './reducers/cartReducer';
-
+import orderReducer from './reducers/addressReducer';
 
 const reducer = combineReducers({
     getProducts : getProductReducer,
@@ -14,7 +14,8 @@ const reducer = combineReducers({
     getProductDetails : getProductDetailsReducer,
     getNamestandDetails : getNamestandDetailsReducer,
     getOtherDetails: getOtherDetailsReducer,
-    cart: cartReducer 
+    cart: cartReducer ,
+    orders: orderReducer
     
     
 })

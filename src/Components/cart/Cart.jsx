@@ -1,9 +1,14 @@
 
 import { Box, Grid, Typography, styled, Button } from '@mui/material';
 import {useSelector} from 'react-redux'
+import { useState } from 'react';
 import CartItem from './CartItem';
-import TotalBalance from './TotalBalance';
+import TotalBalance from './TotalBalance'
+
 import EmptyCart from './EmptyCart';
+import { useNavigate } from 'react-router-dom';
+import useTotalBalance from './hooks/totalBalance';
+
 
 
 
@@ -51,6 +56,7 @@ height: 50px;
 `
 
 
+
 const LeftComponent = styled(Grid) (({theme}) => ({
     paddingRight: 15, 
 
@@ -67,10 +73,43 @@ const LeftComponent = styled(Grid) (({theme}) => ({
 
 
 const Cart = () => {
+
+
+    const navigate = useNavigate();
+
+    
+    const { cartItems } = useSelector(state => state.cart);
+
+    const {totalPrice} = useTotalBalance({cartItems});
     
 
-    const {cartItems} = useSelector(state => state.cart);
+    
 
+    const bundleCartDetails = (items) => {
+        
+        return {
+            
+            items: items.map(item => ({
+                id: item.id,
+                name: item.title,
+                price: item.price,
+                url: item.url,
+                // Add more fields if necessary
+            })),
+            totalPrice,// Include totalPrice here
+        };
+    };
+    
+
+    const addAddress = () => {
+
+        const bundledDetails = bundleCartDetails(cartItems);
+        console.log('Bundled Cart Details:', bundledDetails);
+        navigate('/address', { state: { orderDetails: bundledDetails } });
+    };
+    
+
+    
     return (
         <>
             
@@ -88,9 +127,12 @@ const Cart = () => {
                                 <CartItem item ={item}/>
                             ))
                         }
+                   
                     <ButtonWrapper>
-                        <StyledButton>Place Order</StyledButton>
+                        <StyledButton onClick={()=> addAddress()}>Place Order</StyledButton>
                     </ButtonWrapper>
+                    
+                    
                 </LeftComponent>
                 
 

@@ -61,6 +61,11 @@ const ActionItemOther = ({other}) => {
         navigate ('/cart')  
     } 
 
+    const toAddress = () => {
+
+        navigate ('/address')
+    } 
+
    return (
        <LeftContainer>
            <Box styled={{ padding : "15px 20px", border: "1px solid #f0f0f0"}}>
@@ -68,7 +73,7 @@ const ActionItemOther = ({other}) => {
            </Box>
            
            <StyledButton variant="contained" onClick={()=> addItemToCart()}><AddShoppingCartIcon />Add to Cart</StyledButton>
-           <StyledButton variant="contained"><ShoppingBagIcon />Buy Now</StyledButton>
+           <StyledButton variant="contained" onClick={() => toAddress()}><ShoppingBagIcon />Buy Now</StyledButton>
 
         </LeftContainer>
     );

@@ -92,7 +92,7 @@ const DetailViewNamestand = () => {
                     namestand && Object.keys(namestand).length  &&
                     <Container container>
                         <Grid item lg={4} md={4} sm={8} xs={12}><ActionItemNamestand namestand={namestand}/></Grid>
-                        <RightContainer item lg={8} md={8} sm={8} xs={12}><Typography variant="h5">{namestand.title.longTitle}</Typography>
+                    <RightContainer item lg={8} md={8} sm={8} xs={12}><Typography variant="h5">     {namestand.title.longTitle}</Typography>
                         <Typography>
                             <Box component ="span" style={{fontSize: 30, fontWeight: 500}}>₹{namestand.price.cost}</Box>&nbsp;&nbsp;&nbsp;
                             <Box component ="span" style ={{color: 'red'}}><strike> ₹{namestand.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
@@ -107,7 +107,7 @@ const DetailViewNamestand = () => {
                         </SmallText>
                         
     
-                        </RightContainer>
+                    </RightContainer>
                         
                     </Container>
                }

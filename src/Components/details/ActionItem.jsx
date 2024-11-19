@@ -59,6 +59,11 @@ const ActionItem = ({product}) => {
         dispatch (addToCart(id, quantity));
         navigate ('/cart')
     } 
+
+    const toAddress = () => {
+
+        navigate ('/address')
+    } 
    
    
     return (
@@ -68,7 +73,7 @@ const ActionItem = ({product}) => {
            </Box>
            
            <StyledButton variant="contained" onClick={()=> addItemToCart()}><AddShoppingCartIcon />Add to Cart</StyledButton>
-           <StyledButton variant="contained"><ShoppingBagIcon />Buy Now</StyledButton>
+           <StyledButton variant="contained" onClick={() => toAddress()}><ShoppingBagIcon />Buy Now</StyledButton>
 
         </LeftContainer>
     );

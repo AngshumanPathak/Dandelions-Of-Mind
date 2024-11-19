@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Box, Typography,styled } from "@mui/material"
+import useTotalBalance from "./hooks/totalBalance"
 
 
 const Header = styled (Box)`
@@ -46,39 +47,15 @@ font-size: 12px;
 
 const TotalBalance = ({cartItems}) => {
 
-    
-    const[price, setPrice] = useState(0);
-    const [discount, setDiscount] = useState(0);
+    const { price, discount, deliveryCharges, totalPrice } = useTotalBalance({ cartItems });
+
 
 
     useEffect(() => {
-        totalAmount();
-    }, [cartItems])
 
 
-    const totalAmount =() =>{
-
-        let price = 0 , discount = 0;
-        cartItems.map(item => {
-           price += item.price.mrp;
-           discount += (item.price.mrp - item.price.cost);
-    
-    
-    
-        });
-
-        setPrice(price);
-        setDiscount(discount);
-
-
-    }
-
-    
-    
-
-
-    
-    return (
+    }, [price, discount, deliveryCharges, totalPrice]);
+    return ( 
         <Box>
             <Header>
                 <Typography>Price Details</Typography>
@@ -93,11 +70,11 @@ const TotalBalance = ({cartItems}) => {
                 </Typography>
 
                 <Typography>Delivery Price 
-                <Price component="span">₹ 40</Price>
+                <Price component="span">₹ {deliveryCharges}</Price>
                 </Typography>
 
                 <Typography variant ="h6" style={{borderTop : "2px solid #878787"}} >Total Price
-                <Price component="span">₹ {price - discount + 40}</Price>
+                <Price component="span">₹ {totalPrice}</Price>
                 </Typography>
                 <Diskcount> **You will save ₹ {discount} on this order**</Diskcount>
                 
@@ -113,7 +90,7 @@ const TotalBalance = ({cartItems}) => {
 
 
         
-    )
+    ) 
 }
 
 export default TotalBalance
