@@ -6,7 +6,7 @@ import Home from './Components/MainPage/Home/Home';
 import DetailView from './Components/details/DetailView';
 import DetailViewNamestand from './Components/details/DetailViewNamestand';
 import DetailViewOther from './Components/details/DetailViewOther';
-import Cart from './Components/cart/cart';
+import Cart from './Components/cart/Cart'
 import Address from './Components/Address/Address';
 import {Box} from '@mui/material';
 import DataProvider from './Context/DataProvider';
