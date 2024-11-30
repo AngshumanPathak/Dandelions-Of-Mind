@@ -10,8 +10,8 @@ const useTotalBalance = ({ cartItems }) => {
         const totalAmount = () => {
             let p = 0, d = 0, dc = 0;
             cartItems.forEach(item => {
-                p += item.price.mrp;
-                d += (item.price.mrp - item.price.cost);
+                p += item.price.mrp * item.quantity;
+                d += (item.price.mrp - item.price.cost) * item.quantity;
                 dc += 40;
             });
             setPrice(p);

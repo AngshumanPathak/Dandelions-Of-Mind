@@ -1,4 +1,6 @@
-import { Box, Button, ButtonGroup, styled } from "@mui/material"
+import { Box, Button, ButtonGroup, styled } from "@mui/material";
+
+
 
 
 const Component = styled(ButtonGroup)`
@@ -11,13 +13,21 @@ border-radius: 50px;
 `
 
 
-const GroupedButton = () => {
+const GroupedButton = ({count, onIncrease, onDecrease}) => {
+
+ 
     return (
+     
       <Component>
-        <StyledButton>-</StyledButton>
-        <Button disabled >1</Button>
-        <StyledButton>+</StyledButton>
-     </Component>
+        <StyledButton onClick={onDecrease} disabled={count <= 1}>-</StyledButton>
+        <Button disabled>{count}</Button>
+        <StyledButton onClick={onIncrease}>+</StyledButton>
+      </Component>
+
+     
+      
+      
+
         
     )
 }

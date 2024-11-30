@@ -1,11 +1,11 @@
 
 import { Box, Grid, Typography, styled, Button } from '@mui/material';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import { useState } from 'react';
 import CartItem from './CartItem';
 import TotalBalance from './TotalBalance'
-
 import EmptyCart from './EmptyCart';
+import { updateCartQuantity } from '../../redux/actions/cartActions';
 import { useNavigate } from 'react-router-dom';
 import useTotalBalance from './hooks/totalBalance';
 
@@ -76,13 +76,20 @@ const Cart = () => {
 
 
     const navigate = useNavigate();
-
-    
+    const dispatch = useDispatch();
     const { cartItems } = useSelector(state => state.cart);
-
     const {totalPrice} = useTotalBalance({cartItems});
     
-
+    
+    const handleIncrease = (id, quantity) => {
+        dispatch(updateCartQuantity(id, quantity + 1));
+      };
+    
+      const handleDecrease = (id, quantity) => {
+        if (quantity > 1) {
+          dispatch(updateCartQuantity(id, quantity - 1));
+        }
+      };
     
 
     const bundleCartDetails = (items) => {
@@ -96,7 +103,7 @@ const Cart = () => {
                 url: item.url,
                 // Add more fields if necessary
             })),
-            totalPrice,// Include totalPrice here
+            totalPrice: cartItems.reduce((acc, item) => acc + item.price.cost * item.quantity, 0),// Include totalPrice here
         };
     };
     
@@ -124,7 +131,10 @@ const Cart = () => {
                         {
 
                             cartItems.map(item => (
-                                <CartItem item ={item}/>
+                                <CartItem key = {item.id} item ={item}
+                                onIncrease={() => handleIncrease(item.id, item.quantity)}
+                                onDecrease={() => handleDecrease(item.id, item.quantity)}
+                                />
                             ))
                         }
                    

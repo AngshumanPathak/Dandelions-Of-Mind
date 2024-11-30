@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
+import {useEffect } from "react"
 import { Box, Typography,styled } from "@mui/material"
 import useTotalBalance from "./hooks/totalBalance"
+
 
 
 const Header = styled (Box)`
@@ -48,13 +49,17 @@ font-size: 12px;
 const TotalBalance = ({cartItems}) => {
 
     const { price, discount, deliveryCharges, totalPrice } = useTotalBalance({ cartItems });
+    
 
-
+     
 
     useEffect(() => {
 
 
     }, [price, discount, deliveryCharges, totalPrice]);
+
+   
+
     return ( 
         <Box>
             <Header>

@@ -11,9 +11,6 @@ export const addToCart = (id, quantity) => async(dispatch) => {
         const namestandUrl = `${URL}/namestand/${id}`;
         const otherUrl = `${URL}/other/${id}`;
 
-        
-        
-
 
         const requests = [
             axios.get(productUrl),
@@ -54,3 +51,18 @@ export const removeFromCart = (id) => (dispatch) => {
     
    dispatch({type: actiontypes.REMOVE_FROM_CART, payload: id});
 }
+
+
+export const updateCartQuantity = (id, quantity) => (dispatch) => {
+    try {
+      dispatch({
+        type: actiontypes.UPDATE_CART_QUANTITY,
+        payload: { id, quantity },
+      });
+    } catch (error) {
+      dispatch({
+        type: actiontypes.CART_UPDATE_ERROR,
+        payload: error.message,
+      });
+    }
+  };

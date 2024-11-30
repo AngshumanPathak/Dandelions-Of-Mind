@@ -1,6 +1,6 @@
 import { Box, Typography, styled, Button } from "@mui/material";
 import { addEllipsis } from "../../utils/common-utils";
-import ButtonGroup from "./ButtonGroup";
+import GroupedButton from "./ButtonGroup";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "../../redux/actions/cartActions";
 
@@ -28,7 +28,7 @@ background-color: white;
 `
 
 
-const CartItem = ({item}) => {
+const CartItem = ({item, onIncrease, onDecrease}) => {
     
 
     const dispatch = useDispatch()
@@ -43,7 +43,13 @@ const CartItem = ({item}) => {
         <Container>
             <LeftContainer>
                 <img src= {item.url} alt="Item Image" style={{height: 110, width: 110}}/>
-                <ButtonGroup/>
+                <GroupedButton 
+                
+                count={item.quantity}
+                onIncrease={onIncrease}
+                onDecrease={onDecrease}
+                
+                />
             </LeftContainer>
             <RightContainer>
                 <Typography style ={{fontSize: 16}}>{addEllipsis(item.title.longTitle)}</Typography>
