@@ -7,6 +7,9 @@ import LoginDialog from '../LoginSignUp/LoginDialog'
 import { useNavigate, useLocation } from 'react-router-dom'
 import TotalBalance from '../cart/TotalBalance'
 import { useDispatch } from 'react-redux'
+import {saveOrder} from '../../redux/actions/addressActions'
+import { payUsingPaytm } from '../../service/api'
+import { post } from '../../utils/paytm'
 
 const Container = styled(Box)`
 
@@ -159,14 +162,25 @@ const Address = () => {
     setShowLoginPrompt(true);
   } else {
       
-     const finalOrderDetails = {
+     const updatedOrderDetails = {
 
         ...orderDetails,address
      };
 
-     dispatch(saveOrder(finalOrderDetails));
-     console.log('Final Order Details:', finalOrderDetails);
-  }
+     dispatch(saveOrder(updatedOrderDetails));
+    
+     navigate("/payment", { state: { updatedOrderDetails } });
+     
+     
+  //    let response = await payUsingPaytm({amount:500, email:'pathakangshuman700@gmail.com'})
+  //    let information = {
+      
+  //     action: 'https://securegw-stage.paytm.in/order/process',
+  //     params: response
+  //    }
+
+  //    post(information);
+   }
 
 
 };

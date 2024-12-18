@@ -78,7 +78,7 @@ const ActionItemNamestand = ({namestand}) => {
            </Box>
            
            <StyledButton variant="contained" onClick={()=> addItemToCart()}><AddShoppingCartIcon />Add to Cart</StyledButton>
-           <StyledButton variant="contained" onClick={() => toAddress()}><ShoppingBagIcon />Buy Now</StyledButton>
+           <StyledButton variant="contained" onClick={() => { addItemToCart(); toAddress()}}><ShoppingBagIcon />Buy Now</StyledButton>
 
          </LeftContainer>
     );

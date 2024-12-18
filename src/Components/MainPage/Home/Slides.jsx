@@ -2,7 +2,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Box, Typography, Button,Divider, styled } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Component = styled(Box)`
@@ -64,12 +64,21 @@ const responsive = {
 
 const Slide = ({products}) => {
 
+  const navigate = useNavigate()
+
+  const handleViewAll = () => {
+
+    navigate('/SlidesViewAll', {state: {products}});
+  }
+
+
+
     return (
 
     <Component>
       <Deal>
          <DealText>Key Rings</DealText>
-         <ViewAllButton variant = "contained">
+         <ViewAllButton variant="contained" onClick={handleViewAll}>
            View All
          </ViewAllButton>
       </Deal>

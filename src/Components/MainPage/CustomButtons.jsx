@@ -68,7 +68,7 @@ const CustomButtons = () => {
 
   
 
-   const {account, setAccount} = useContext(DataContext);
+   const {account, setAccount, isLoggedIn, setIsLoggedIn} = useContext(DataContext);
    const openDialog = () =>{
        setOpen(true);
    }
@@ -79,9 +79,13 @@ const CustomButtons = () => {
 
   return (
     <> <Wrapper>
-          {
-            account? <Profile account = {account} setAccount = {setAccount}/> : <LoginButton variant="container" onClick={()=> openDialog()}>Login</LoginButton>
-          }
+          {isLoggedIn ? (
+          <Profile account={account} setAccount={setAccount} setIsLoggedIn={setIsLoggedIn} />
+        ) : (
+          <LoginButton variant="container" onClick={openDialog}>
+            Login
+          </LoginButton>
+        )}
           
           <Container to = "/cart">
               <Badge badgeContent={cartItems?.length} color="primary">

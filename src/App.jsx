@@ -8,12 +8,28 @@ import DetailViewNamestand from './Components/details/DetailViewNamestand';
 import DetailViewOther from './Components/details/DetailViewOther';
 import Cart from './Components/cart/Cart'
 import Address from './Components/Address/Address';
+import PaymentPage from './Components/Payment/PaymentPage';
+import Orders from './Components/Orders/Orders';
 import {Box} from '@mui/material';
 import DataProvider from './Context/DataProvider';
+import { useEffect } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
+import OrderConfirmed from './Components/OrderConfirmed/OrderConfirmed';
+import AdminDashboard from './Components/AdminDashboard/AdminDashboard';
+import ProtectedRoute from './Components/AdminDashboard/ProtectedRoute';
+import SlidesFullView from './Components/MainPage/Home/SlidesFullView';
+import Slides2FullView from './Components/MainPage/Home/Slides2FullView';
+import Slides3FullView from './Components/MainPage/Home/Slides3FullView';
+import LoginDialog from './Components/LoginSignUp/LoginDialog';
 
 function App(){
+
+    useEffect(() => {
+        // Remove the token from localStorage on page load (refresh)
+        localStorage.removeItem('authToken');
+        
+      }, );
+
   return (
   <DataProvider>
     <BrowserRouter>
@@ -26,6 +42,26 @@ function App(){
                <Route path = '/other/:id' element = {<DetailViewOther/>}/>
                <Route path = '/cart' element = {<Cart/>}/>
                <Route path = '/address' element = {<Address/>}/>
+               <Route path = '/payment' element = {<PaymentPage/>}/>
+               <Route path = '/orderConfirmed' element = {<OrderConfirmed/>}/>
+               <Route path = '/orders' element = {<Orders/>}/>
+               <Route path = '/SlidesViewAll' element = {<SlidesFullView/>}/>
+               <Route path = '/Slides2ViewAll' element = {<Slides2FullView/>}/>
+               <Route path = '/Slides3ViewAll' element = {<Slides3FullView/>}/>
+               <Route path="/reset-password/:token" element={<LoginDialog open={true} setOpen={() => {}} />} />
+               
+               
+               <Route
+                        path="/admin-dashboard"
+                        element={
+                            <ProtectedRoute requiredRole="admin">
+                                <AdminDashboard />
+                            </ProtectedRoute>
+                        }
+                />
+                
+                
+               
                
             </Routes>   
         </Box>

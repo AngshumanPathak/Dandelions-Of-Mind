@@ -7,8 +7,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Box, Typography, Button,Divider, styled } from "@mui/material";
-import { Link } from "react-router-dom";
-import { Namestand } from "../../../../server/model/product-schema";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 const Component = styled(Box)`
@@ -70,12 +70,19 @@ const responsive = {
 
 const Slide2 = ({namestands}) => {
 
+  const navigate = useNavigate()
+
+  const handleViewAll = () => {
+
+    navigate('/Slides2ViewAll', {state: {namestands}});
+  }
+
     return (
 
     <Component>
       <Deal>
          <DealText>Name Stands</DealText>
-         <ViewAllButton variant = "contained">
+         <ViewAllButton variant = "contained" onClick={handleViewAll}>
            View All
          </ViewAllButton>
       </Deal>
