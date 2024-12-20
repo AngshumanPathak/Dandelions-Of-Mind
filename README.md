@@ -1,6 +1,6 @@
 # Dandelions of Mind 🌼
 
-**[Live Site](https://dandelions-of-mind-c48cf38618b4.herokuapp.com/)**  
+**[Live Site](https://dandelions-of-mind-4bcdb8bd3434.herokuapp.com)**  
 
 A web application designed to explore and express thoughts in an organized manner. This platform allows users to interact with content, reflect, and share their insights.  
 
